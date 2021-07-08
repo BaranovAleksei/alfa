@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h4>{{titlePage}}</h4>
-    <CurrencyTable />
+    <CurrencyTable :currency="currency" />
   </div>
 </template>
 
@@ -11,9 +11,16 @@
   export default {
     name: 'CurrencyPage',
     data: () => ({
-      titlePage: 'таблица валют: ',
+      titlePage: 'таблица валют: '
     }),
+    created() {
+      this.$store.dispatch('fetchCurrency')
+    },
+    computed: {
+      currency() {
+        return this.$store.state.currency
+      }
+    },
     components: { CurrencyTable },
-
   }
 </script>

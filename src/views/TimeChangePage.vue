@@ -17,9 +17,9 @@
     name: 'TimeChangePage',
     data: () => ({
       titlePage: 'укажите период: ',
-      info: null,
+      info: [],
       form: {
-        date: `2016-06-06`.replace(/\b0/g, '')
+        date: 'new Date()'.replace(/\b0/g, '')
       }
     }),
     methods: {

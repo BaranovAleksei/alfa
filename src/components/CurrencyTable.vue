@@ -1,6 +1,5 @@
 <template>
   <div class="currencyTable">
-    {{currencys}}
     <table>
       <thead>
         <tr>
@@ -12,14 +11,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="currency in currencys"
-            :key = "currency.Cur_ID"
+        <tr v-for="(curren, index) in currency"
+            :key = "curren.Cur_ID"
           >
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{index+1}}</td>
+          <td>{{curren.Cur_Code}}</td>
+          <td>{{curren.Cur_Abbreviation}}</td>
+          <td>{{curren.Cur_Name}}</td>
+          <td>{{curren.Cur_Name_Eng}}</td>
         </tr>
       </tbody>
     </table>
@@ -29,15 +28,11 @@
 <script>
   export default {
     name: 'CurrencyTable',
-    created() {
-      this.$store.dispatch('fetchCurrency')
-    },
-
-    computed: {
-      currencys() {
-        return this.$store.state.currency
+    props: {
+      currency: {
+        type: Array,
+        required: true
       }
-
     }
   }
 </script>

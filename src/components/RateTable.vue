@@ -12,10 +12,10 @@
       <tbody>
       <tr v-for="(el,index) in info"
         :key="el.Cur_ID">
-        <td>{{index+1}}</td>
-        <td>{{el.Cur_Abbreviation}}</td>
-        <td>{{el.Cur_Name}}</td>
-        <td>{{el.Cur_OfficialRate}}</td>
+        <td>{{ index+1 }}</td>
+        <td>{{ el.Cur_Abbreviation }}</td>
+        <td>{{ el.Cur_Name }}</td>
+        <td>{{ el.Cur_OfficialRate }}</td>
       </tr>
       </tbody>
     </table>
